@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './feedbackOptions.module.css';
 
-export default function FeedbackOptions({ options, handleFeedback }) {
+const FeedbackOptions = ({ options, handleFeedback }) => {
   const elements = options.map(key => (
     <li className={css.item} key={key}>
       <button
@@ -15,7 +15,9 @@ export default function FeedbackOptions({ options, handleFeedback }) {
     </li>
   ));
   return <ul className={css.list}>{elements}</ul>;
-}
+};
+
+export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
